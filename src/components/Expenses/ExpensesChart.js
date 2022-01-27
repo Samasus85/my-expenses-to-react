@@ -1,9 +1,9 @@
 import React from "react";
-import Chart from "../chart/Chart";
+import Chart from "../chart/Chart";       // получение доступ к другому компоненту
 
 
 const ExpensesChart = (props) => {
-  const chartDataPoints = [
+  const chartDataPoints = [             // данные к-ые должны приходит с сервера
     { label: 'Jan', value: 0 },
     { label: 'Feb', value: 0 },
     { label: 'Mar', value: 0 },

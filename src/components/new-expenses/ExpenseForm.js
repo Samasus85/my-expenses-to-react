@@ -17,31 +17,31 @@ const ExpenseForm = (props) => {                // компонент  к-й п�
     }
     const submitHandler = (event) => {            // функция обработчик формы к-ая выполняется при клике на кнопку Add Expense 
         event.preventDefault()                    // при нажатии на кнопку останавливает попадание на верхнюю главную страницу (т.е.перезагрузку)
-        const expenseData = {
+        const expenseData = {                     // данные новые
             title: title,
             amount: amount,
             date: new Date(date),
         };
-        props.onSaveExpenseData(expenseData)
+        props.onSaveExpenseData(expenseData)        // привязка с данными NewExpenses
 
     }
 
-    return <form onSubmit={submitHandler}>
-        <div className='new-expense__controls'>
-            <div className='new-expense__control'>
-                <label>Title</label>
-                <input name='title' type="text" value={title} onChange={inputChangeHandler} />
+    return <form onSubmit={submitHandler}>          {/*JSX form  - обрабатывается при клике на кнопку Add Expense */}
+        <div className='new-expense__controls'>     {/*блок обертка */}
+            <div className='new-expense__control'>  {/*блок обертка */}
+                <label>Title</label>                {/*надпись, метка для инпута */}
+                <input name='title' type="text" value={title} onChange={inputChangeHandler} />    {/*спец место для ввода данных пользователем - после выполнении условии обнавляется */}
             </div>
-            <div className='new-expense__control'>
-                <label>Amount</label>
-                <input name='amount' type="number" min="0.1" step="1" value={amount} onChange={inputChangeHandler} />
+            <div className='new-expense__control'>  {/*блок обертка */}
+                <label>Amount</label>               {/*надпись, метка для инпута */}
+                <input name='amount' type="number" min="0.1" step="1" value={amount} onChange={inputChangeHandler} />   {/*спец место для ввода данных пользователем - после выполнении условии обнавляется */}
             </div>
-            <div className='new-expense__control'>
-                <label>Date</label>
-                <input name='date' type="date" min="2022-01-01" value={date} onChange={inputChangeHandler} />
+            <div className='new-expense__control'>  {/*блок обертка */}
+                <label>Date</label>                 {/*надпись, метка для инпута */}
+                <input name='date' type="date" min="2022-01-01" value={date} onChange={inputChangeHandler} />     {/*спец место для ввода данных пользователем - после выполнении условии обнавляется */}
             </div>
         </div>
-        <div className='new-expense__actions'>
+        <div className='new-expense__actions'>       {/*блок обертка */}
             <button type='submit'>Add Expense</button>
         </div>
     </form>

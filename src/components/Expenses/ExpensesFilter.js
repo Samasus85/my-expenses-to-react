@@ -1,8 +1,8 @@
 import './ExpensesFilter.css';
 
-const ExpensesFilter = (props) => {
-    const selectChangeHandler = (event) => {
-        props.onChangeFilter(event.target.value)
+const ExpensesFilter = (props) => {                     // компонент к-й фильтрирует пришедщих данных 
+    const selectChangeHandler = (event) => {            // ф-я к-я связывает с данными другого компонента 
+        props.onChangeFilter(event.target.value)        // привязка двух компонентов (получение данных со значениями)
     }
     return (
         <div className='expenses-filter'>
@@ -20,4 +20,4 @@ const ExpensesFilter = (props) => {
     );
 };
 
-export default ExpensesFilter;
+export default ExpensesFilter;                                // экспорт компонента
